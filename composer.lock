@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2114f4c1cc9300e42cbf0281fe31cee4",
-    "content-hash": "e9d03a48396d869d0ca8626b21da4b3e",
+    "hash": "f9f72fa4adc5091668694417c5c655d8",
+    "content-hash": "e0146aa9f6976a770d616275f303284b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1955,6 +1955,122 @@
                 "seo"
             ],
             "time": "2016-06-02 19:37:25"
+        },
+        {
+            "name": "drupal/migrate_google_sheets",
+            "version": "dev-8.x-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_google_sheets.git",
+                "reference": "68196b963da477fd740a5a3f99af3fe0732e83fd"
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/migrate_plus": "8.*"
+            },
+            "replace": {
+                "drupal/migrate_google_sheets_example": "self.version"
+            },
+            "suggest": {
+                "drupal/core": "Required by drupal/migrate_google_sheets_example",
+                "drupal/migrate_plus": "Required by drupal/migrate_google_sheets_example"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Source plugin to use Google Sheets JSON feed as the source for a migration",
+            "homepage": "https://www.drupal.org/project/migrate_google_sheets",
+            "keywords": [
+                "Drupal"
+            ],
+            "time": "2016-08-16 20:19:34"
+        },
+        {
+            "name": "drupal/migrate_plus",
+            "version": "8.3.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_plus.git",
+                "reference": "cb224c6749d0724c0b500caeacd9be64fb6067df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-3.0-beta1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "replace": {
+                "drupal/migrate_example": "self.version",
+                "drupal/migrate_example_advanced": "self.version",
+                "drupal/migrate_example_advanced_setup": "self.version",
+                "drupal/migrate_example_setup": "self.version"
+            },
+            "suggest": {
+                "drupal/core": "Required by drupal/migrate_example, drupal/migrate_example_setup, drupal/migrate_example_advanced, drupal/migrate_example_advanced_setup",
+                "sainsburys/guzzle-oauth2-plugin": "3.0 required for the OAuth2 authentication plugin"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-3.x": "8.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Ryan",
+                    "homepage": "https://www.drupal.org/u/mikeryan",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Enhancements to core migration support",
+            "homepage": "https://www.drupal.org/project/migrate_plus",
+            "time": "2016-10-12 21:15:57"
+        },
+        {
+            "name": "drupal/migrate_tools",
+            "version": "8.3.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/migrate_tools.git",
+                "reference": "7a40f5b333698cf9178b438a80c577586a2331e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-3.0-beta1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*",
+                "drupal/migrate_plus": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-3.x": "8.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Tools to assist in developing and running migrations.",
+            "homepage": "https://www.drupal.org/project/migrate_tools",
+            "time": "2016-10-12 22:54:43"
         },
         {
             "name": "drupal/pathauto",
@@ -7467,6 +7583,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/devel": 20,
+        "drupal/migrate_google_sheets": 20,
         "drupal/r4032login": 20,
         "drupal/config_installer": 20,
         "drupal/drupal-driver": 20,

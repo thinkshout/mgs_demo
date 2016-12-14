@@ -21,7 +21,7 @@ class RoboFile extends \ThinkShout\RoboDrupal\Tasks
     foreach ($migrations as $migration) {
       $this->taskExec('drush mrs ' . $migration)->dir($project_properties['web_root'])->run();
     }
-    $this->taskExec('drush mr --all && drush pmu migrate_google_sheets_example -y && drush en migrate_google_sheets_example -y && drush ms')->dir($project_properties['web_root'])->run();
+    $this->taskExec('drush mr --all && drush pmu migrate_google_sheets_example -y && drush pmu migrate_google_sheets_example -y && drush en migrate_google_sheets_example -y && drush ms')->dir($project_properties['web_root'])->run();
   }
 
 }

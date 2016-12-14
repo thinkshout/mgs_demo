@@ -25,6 +25,7 @@ module:
   migrate: 0
   migrate_google_sheets: 0
   migrate_google_sheets_example: 0
+  migrate_google_sheets_example_setup: 0
   migrate_plus: 0
   migrate_tools: 0
   node: 0

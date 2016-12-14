@@ -1,18 +1,18 @@
-uuid: cce79dce-7511-4299-a54e-a7aa1ad2e3ce
+uuid: 9f0d26c6-2101-48fe-99f6-03dead3d9996
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 8eeWHGqJ8XXt4xzgJcAHyuNWlc271gSzrCVjVnsSkUs
-id: node_page
+  default_config_hash: Kw5VvUTVQfml7onEo6XfpoJqgMmGMaiH4BddTaWFdkk
+id: node_article
 migration_tags: null
 migration_group: games_example
-label: 'Games Site node pages with Google Spreadsheet'
+label: 'Games Site node articles with Google Spreadsheet'
 source:
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: google_sheets
-  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/2/public/values?alt=json'
+  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/3/public/values?alt=json'
   fields:
     -
       name: id
@@ -35,6 +35,22 @@ source:
       label: Redirect
       selector: redirect
     -
+      name: image
+      label: Image
+      selector: image
+    -
+      name: imagealt
+      label: 'Image Alt'
+      selector: imagealt
+    -
+      name: imagetitle
+      label: 'Image Title'
+      selector: imagetitle
+    -
+      name: subhead
+      label: Subhead
+      selector: subhead
+    -
       name: summary
       label: Summary
       selector: summary
@@ -43,16 +59,20 @@ source:
       label: Body
       selector: body
     -
-      name: relatedgames
-      label: 'Related Games'
-      selector: relatedgames
+      name: topic
+      label: Topic
+      selector: topic
+    -
+      name: relatedblocks
+      label: 'Related Blocks'
+      selector: relatedblocks
   ids:
     id:
       type: integer
 process:
   type:
     plugin: default_value
-    default_value: page
+    default_value: article
   title: title
   status: status
   path/pathauto:
@@ -64,7 +84,12 @@ process:
   body/format:
     plugin: default_value
     default_value: full_html
-  field_related_articles:
+  field_image:
+    plugin: entity_lookup
+    source: image
+  field_image/alt: imagealt
+  field_image/title: imagetitle
+  field_related_blocks:
     -
       plugin: explode
       source: relatedblocks
@@ -74,9 +99,9 @@ process:
       callable: trim
     -
       plugin: migration
-      migration: node_article
+      migration: blocks
 destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - node_article
+    - blocks

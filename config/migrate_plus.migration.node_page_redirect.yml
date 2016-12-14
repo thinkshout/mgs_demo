@@ -12,7 +12,7 @@ source:
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: google_sheets
-  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/4/public/values?alt=json'
+  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/2/public/values?alt=json'
   fields:
     -
       name: path
@@ -23,7 +23,7 @@ source:
       label: Redirect
       selector: redirect
   ids:
-    redirect:
+    path:
       type: string
 process:
   redirect_source/path: path

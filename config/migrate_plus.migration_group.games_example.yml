@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: games_example
-label: games_example
-description: ''
-source_type: null
+label: 'Games imports example'
+description: 'Simple test of migrating from google sheets.'
+source_type: 'Google Spreadsheet'
 module: null
 shared_configuration: null

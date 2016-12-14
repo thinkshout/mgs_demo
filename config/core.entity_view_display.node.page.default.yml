@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_related_articles
+    - field.field.node.page.field_subhead
     - node.type.page
   module:
     - text
@@ -30,6 +31,13 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+  field_subhead:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   links:
     weight: 101
     settings: {  }

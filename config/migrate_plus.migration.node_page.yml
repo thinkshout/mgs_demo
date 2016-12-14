@@ -35,6 +35,10 @@ source:
       label: Redirect
       selector: redirect
     -
+      name: subhead
+      label: Subhead
+      selector: subhead
+    -
       name: summary
       label: Summary
       selector: summary
@@ -59,6 +63,7 @@ process:
     plugin: default_value
     default_value: 0
   path/alias: path
+  field_subhead: subhead
   body/value: body
   body/summary: summary
   body/format:
@@ -67,14 +72,10 @@ process:
   field_related_articles:
     -
       plugin: explode
-      source: relatedblocks
+      source: relatedgames
       delimiter: ;
     -
-      plugin: callback
-      callable: trim
-    -
-      plugin: migration
-      migration: node_article
+      plugin: entity_lookup
 destination:
   plugin: 'entity:node'
 migration_dependencies:

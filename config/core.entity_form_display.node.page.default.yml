@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_related_articles
+    - field.field.node.page.field_subhead
     - node.type.page
   module:
     - path

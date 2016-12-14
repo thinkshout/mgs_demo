@@ -79,6 +79,7 @@ process:
     plugin: default_value
     default_value: 0
   path/alias: path
+  field_subhead: subhead
   body/value: body
   body/summary: summary
   body/format:

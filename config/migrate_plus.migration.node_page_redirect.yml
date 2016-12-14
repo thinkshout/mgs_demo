@@ -28,9 +28,13 @@ source:
 process:
   redirect_source/path: path
   redirect_redirect/uri:
-    plugin: skip_on_empty
-    method: row
-    source: redirect
+    -
+      plugin: explode
+      source: redirect
+      delimiter: ;
+    -
+      plugin: skip_on_empty
+      method: row
 destination:
   plugin: 'entity:redirect'
 migration_dependencies: {  }

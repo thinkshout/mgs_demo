@@ -1,0 +1,89 @@
+uuid: 126f6f4b-ec49-4974-ab70-e38989380a65
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: CmKqNxF2P9BZdT3_X6YG4Auh7CtMW3u9Qqp8DBu8Bxk
+id: menu_links
+migration_tags: null
+migration_group: games_example
+label: 'Games Site menu links with Google Spreadsheet'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: google_sheets
+  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/1/public/values?alt=json'
+  fields:
+    -
+      name: id
+      label: 'Unique identifier'
+      selector: id
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: path
+      label: Path
+      selector: path
+    -
+      name: menu_name
+      label: 'Menu Name'
+      selector: menuname
+    -
+      name: external
+      label: 'Is external?'
+      selector: external
+    -
+      name: weight
+      label: Weight
+      selector: weight
+    -
+      name: expanded
+      label: Expanded
+      selector: expanded
+    -
+      name: parentid
+      label: 'Parent Id'
+      selector: parentid
+  ids:
+    id:
+      type: integer
+process:
+  id: id
+  title: title
+  description: title
+  menu_name: menu_name
+  link/uri:
+    plugin: link_url_import
+    source: path
+  link/options:
+    plugin: default_value
+    default_value: {  }
+  link/title: title
+  route:
+    plugin: route
+    source:
+      - path
+      - '@link/options'
+  route_name: '@route/route_name'
+  route_parameters: '@route/route_parameters'
+  url: '@route/url'
+  options: '@route/options'
+  external: external
+  weight: weight
+  expanded: expanded
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parentid
+      - '@menu_name'
+      - parent_link_path
+destination:
+  plugin: 'entity:menu_link_content'
+  default_bundle: menu_link_content
+  no_stub: true
+migration_dependencies:
+  required:
+    - upgrade_menu
+  optional: {  }

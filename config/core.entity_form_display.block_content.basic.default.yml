@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.basic
     - field.field.block_content.basic.body
+    - field.field.block_content.basic.field_visible_block_title
   module:
     - text
 _core:
@@ -16,15 +17,22 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: -4
+    weight: 2
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+  field_visible_block_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   info:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''

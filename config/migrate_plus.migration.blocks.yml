@@ -1,0 +1,60 @@
+uuid: f653bf3d-547f-4a2d-87da-591fe425f61c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ce3YE0MdnGIYHefcVYBbrQE1O9YriXU1xKcB1jF8G3o
+id: blocks
+migration_tags: null
+migration_group: games_example
+label: 'Example block migration with Google Spreadsheet'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: google_sheets
+  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/4/public/values?alt=json'
+  fields:
+    -
+      name: id
+      label: 'Unique identifier'
+      selector: id
+    -
+      name: blocktype
+      label: 'Block type'
+      selector: blocktype
+    -
+      name: blockdescription
+      label: 'Block description'
+      selector: blockdescription
+    -
+      name: blocktext
+      label: 'Block text'
+      selector: blocktext
+    -
+      name: visibleblocktitle
+      label: 'Visible Block Title'
+      selector: visibleblocktitle
+    -
+      name: universalidentifier
+      label: 'Universal identifier'
+      selector: universalidentifier
+  ids:
+    id:
+      type: integer
+process:
+  type: blocktype
+  info: blockdescription
+  field_visible_block_title: visibleblocktitle
+  body/value: blocktext
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  uuid:
+    plugin: skip_on_empty
+    method: process
+    source: universalidentifier
+destination:
+  plugin: 'entity:block_content'
+migration_dependencies:
+  required: {  }
+  optional: {  }

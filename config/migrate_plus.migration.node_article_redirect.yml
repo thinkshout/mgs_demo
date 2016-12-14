@@ -1,18 +1,18 @@
-uuid: b280a25f-4dfa-47d2-9798-d2e5165c38a2
+uuid: 4d9f0a15-39e1-4ea5-9bd8-b8187513fb81
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: rTAeiJsxhzooqI1mfN2-j8dGnuV7_Af0Nh1wSXc5OH4
-id: node_page_redirect
+  default_config_hash: 4VbtlmwN2bBUfVes2TT4fIj_OdeDA9MXLl4VSjGeD10
+id: node_article_redirect
 migration_tags: null
 migration_group: games_example
-label: 'Games Site node pages with Google Spreadsheet'
+label: 'Games Site node articles with Google Spreadsheet'
 source:
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: google_sheets
-  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/2/public/values?alt=json'
+  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/3/public/values?alt=json'
   fields:
     -
       name: path

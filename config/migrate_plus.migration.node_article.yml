@@ -39,6 +39,10 @@ source:
       label: Image
       selector: image
     -
+      name: imagefilename
+      label: 'Image Filename'
+      selector: imagefilename
+    -
       name: imagealt
       label: 'Image Alt'
       selector: imagealt
@@ -85,9 +89,23 @@ process:
   body/format:
     plugin: default_value
     default_value: full_html
-  field_image:
-    plugin: entity_lookup
-    source: image
+  public_file_directory:
+    plugin: default_value
+    default_value: 'public://'
+  public_file_uri:
+    plugin: concat
+    delimiter: ''
+    source:
+      - '@public_file_directory'
+      - imagefilename
+  field_image/target_id:
+    -
+      plugin: file_copy
+      source:
+        - image
+        - '@public_file_uri'
+    -
+      plugin: entity_generate
   field_image/alt: imagealt
   field_image/title: imagetitle
   field_related_blocks:

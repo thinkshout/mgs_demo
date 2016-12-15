@@ -1,0 +1,39 @@
+uuid: a5c480b6-41cb-427d-aab4-775ddba5293a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ITWPTF0xmhA_Be_f8pn2pSt76VK_vQ26QiEovLUgJRE
+id: node_landing_page_redirect
+migration_tags: null
+migration_group: games_example
+label: 'Games Site node pages with Google Spreadsheet'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: google_sheets
+  urls: 'http://spreadsheets.google.com/feeds/list/1spS1BeUIzxR1KrGK2kKzAoiFZii6vBHyLx_SA0Sb89M/2/public/values?alt=json'
+  fields:
+    -
+      name: path
+      label: Path
+      selector: path
+    -
+      name: redirect
+      label: Redirect
+      selector: redirect
+  ids:
+    redirect:
+      type: string
+process:
+  redirect_source/path: redirect
+  redirect_redirect/uri:
+    plugin: link_uri
+    source:
+      - path
+  status_code:
+    plugin: default_value
+    default_value: '301'
+destination:
+  plugin: 'entity:redirect'
+migration_dependencies: {  }

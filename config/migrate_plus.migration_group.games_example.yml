@@ -1,0 +1,10 @@
+uuid: df5eb6b8-5438-4444-b8fd-4eff875cb27a
+langcode: en
+status: true
+dependencies: {  }
+id: games_example
+label: 'Games imports example'
+description: 'Simple test of migrating from google sheets.'
+source_type: 'Google Spreadsheet'
+module: null
+shared_configuration: null

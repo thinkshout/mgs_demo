@@ -1,10 +1,10 @@
-uuid: cce79dce-7511-4299-a54e-a7aa1ad2e3ce
+uuid: f72047c3-7ae5-4464-8ba1-cbc2b2560d2d
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 8eeWHGqJ8XXt4xzgJcAHyuNWlc271gSzrCVjVnsSkUs
-id: node_page
+  default_config_hash: fdwN2ZaZerKNQv1kJqx23EuRR_ny6wyDCyc18jL9Ep0
+id: node_landing_page
 migration_tags: null
 migration_group: games_example
 label: 'Games Site node pages with Google Spreadsheet'
@@ -56,7 +56,7 @@ source:
 process:
   type:
     plugin: default_value
-    default_value: page
+    default_value: landing_page
   title: title
   status: status
   path/pathauto:
@@ -80,4 +80,4 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - node_article
+    - node_game

@@ -33,6 +33,9 @@ if (!empty($drupal_hash_salt)) {
 if (!defined('PANTHEON_ENVIRONMENT')) {
   $config_directories[CONFIG_SYNC_DIRECTORY] = $config_directory_name;
 }
+else {
+  $config_directories[CONFIG_SYNC_DIRECTORY] = '../config';
+}
 
 // Check for custom DRUPAL_INSTALL environment variable (set in
 // drush/SITE.drush.inc) OR PANTHEON_ENVIRONMENT to determine if we should

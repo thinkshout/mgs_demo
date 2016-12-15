@@ -10,6 +10,9 @@ profiles/contrib
 # Ignore Drupal's file directory
 /web/sites/*/files/
 /behat/behat.local.yml
+sites/*/files
+sites/*/private
+files/*
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest

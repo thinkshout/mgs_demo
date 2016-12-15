@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.basic
+    - block_content.type.cta_block
     - field.storage.node.field_related_blocks
     - node.type.game
 id: node.game.field_related_blocks
@@ -20,9 +20,9 @@ settings:
   handler: 'default:block_content'
   handler_settings:
     target_bundles:
-      basic: basic
+      cta_block: cta_block
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: basic
 field_type: entity_reference

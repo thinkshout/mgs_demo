@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_related_articles
-    - field.field.node.page.field_subhead
     - node.type.page
   module:
     - path
@@ -30,14 +28,6 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-  field_related_articles:
-    weight: 32
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   path:
     type: path
     weight: 30

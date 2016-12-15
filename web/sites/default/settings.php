@@ -32,7 +32,6 @@ if (!empty($drupal_hash_salt)) {
 // If we're on pantheon we don't overwrite the sync directory.
 if (!defined('PANTHEON_ENVIRONMENT')) {
   $config_directories[CONFIG_SYNC_DIRECTORY] = $config_directory_name;
-}
 else {
   $config_directories[CONFIG_SYNC_DIRECTORY] = '../config';
 }
